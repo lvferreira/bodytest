@@ -1,5 +1,5 @@
 ***Settings***
-Documentation       Cadastro de Alunos
+Documentation       Suíte de Cadastro de Alunos
 
 Resource            ${EXECDIR}/resources/base.robot
 
@@ -9,12 +9,12 @@ Test Teardown       Take Screenshot
 ***Test Cases***
 Cenario: Novo Aluno
 
-    &{student}                      Create Dictionary   name=Carolina Castro     email=carol@test.com     age=35       weight=53      feet_tall=1.59 
+    &{student}      Create Dictionary   name=Carolina Castro     email=carol@test.com     age=35       weight=53      feet_tall=1.59 
 
-    Remove Student                  ${student.email}
+    Remove Student             ${student.email}
     Go to Students
     Go to Form Student
-    New Student                     ${student}        
+    New Student                ${student}        
 
     #Toaster de Sucesso
     #<div role="alert" class="Toastify__toast-body">Aluno cadastrado com sucesso.</div>
@@ -22,16 +22,16 @@ Cenario: Novo Aluno
 
     [Teardown]                     Thinking And Taking Screenshot  2
 
-Cenario: Nao deve permitir email duplicado
+Cenario: Não deve permitir email duplicado
     [tags]      dup
-    &{student}                      Create Dictionary   name=Caio Marcio     email=caio@test.com     age=36       weight=80      feet_tall=1.73 
+    &{student}      Create Dictionary   name=Caio Marcio     email=caio@test.com     age=36       weight=80      feet_tall=1.73 
 
-    Insert Student                  ${student}
+    Insert Student            ${student}
     Go to Students
     Go to Form Student
-    New Student                     ${student}        
+    New Student               ${student}        
 
-    Toaster Text Should be         Email já existe no sistema.
+    Toaster Text Should be    Email já existe no sistema.
 
     [Teardown]                     Thinking And Taking Screenshot  2
 
@@ -55,7 +55,7 @@ Cenario: Todos os campos devem ser obrigatorios
     Log     ${expect_alerts}  
     Log     ${got_alerts}  
 
-    Lists should be equal       ${expect_alerts}        ${got_alerts} 
+    Lists should be equal   ${expect_alerts}        ${got_alerts} 
 
 Cenario: Validacao dos campos numericos
     [tags]          temp
@@ -67,21 +67,21 @@ Cenario: Validacao dos campos numericos
 Cenario: Validar campo do tipo email
     [tags]          temp
     [Template]      Check Type Filed on Student Form
-    ${EMAIL_FIELD}           email
+    ${EMAIL_FIELD}        email
 
 Cenario: Validar idade mínima para cadastro
-    &{student}                      Create Dictionary   name=Livia da Silva     email=livia@test.com     age=13       weight=45      feet_tall=1.55 
+    &{student}      Create Dictionary   name=Livia da Silva     email=livia@test.com     age=13       weight=45      feet_tall=1.55 
 
     Go to Students
     Go to Form Student
-    New Student                     ${student}        
-    Alert Text Should Be            A idade deve ser maior ou igual 14 anos
+    New Student             ${student}        
+    Alert Text Should Be    A idade deve ser maior ou igual 14 anos
 
 
 ***Keywords***
 Check Type Filed On Student Form
-    [Arguments]                 ${element}      ${type}
+    [Arguments]             ${element}      ${type}
 
     Go to Students
     Go to Form Student
-    Field Should be Type        ${element}      ${type}
+    Field Should be Type    ${element}      ${type}
