@@ -14,6 +14,8 @@ Resource        actions/components.robot
 Resource        actions/plans.robot
 Resource        actions/enrolls.robot
 
+Resource        herlpers.robot
+
 ***Keywords***
 Start Browser Session
     New Browser     chromium    True
@@ -35,11 +37,5 @@ Thinking And Taking Screenshot
     Sleep       ${timeout}
     Take Screenshot
 
-###Helpers
-Get JSON 
-    [Arguments]     ${file_name}
 
-    ${file}=            Get File                 ${EXECDIR}/resources/fixtures/${file_name}
-    ${json_object}      Evaluate                json.loads($file)       json
-    [return]            ${json_object}
  
