@@ -3,7 +3,7 @@ Documentation       Atualizar Alunos
 
 Resource            ${EXECDIR}/resources/base.robot
 
-Suite Setup         Start Admin Session
+Suite Setup         User Session
 Test Teardown       Take Screenshot
 
 ***Test Cases***

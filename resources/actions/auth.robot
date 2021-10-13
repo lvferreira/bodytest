@@ -3,7 +3,7 @@ Documentation       Acoes de autorizacao
 
 ***Keywords***
 Go To Login Page
-    Go to       https://bodytest-web-carol.herokuapp.com/
+    Go to       https://bodytest-web-qacademy.herokuapp.com/
 
 Login With
     [Arguments]     ${email}        ${pass}

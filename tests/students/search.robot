@@ -3,30 +3,31 @@ Documentation       Buscar Alunos
 
 Resource            ${EXECDIR}/resources/base.robot
 
-Suite Setup         Start Admin Session
+Suite Setup         User Session
 Test Teardown       Take Screenshot
 
 ***Test Cases***
-Cenario: Busca exata
-
-    &{student}          Create Dictionary   name=Steve Jobs     email=jobs@test.com     age=70       weight=89      feet_tall=1.80
+Cenario: Busca Exata
+    [Tags]      search
+    &{student}          Create Dictionary   name=Leandro Ferreira      email=leo.ferreira@mail.io     age=34       weight=74      feet_tall=1.68
 
     Remove Student By Name              ${student.name}
-    Insert student                      ${student} 
-    Go to Students
+    Insert Student                      ${student} 
+    Go To Students
     Search Student By Name              ${student.name}    
     Student Name Should Be Visible      ${student.name}
     Total Items Should Be               1
 
-Cenario: Registro não encontrado
+Cenario: Registro Não Encontrado
+    [Tags]      not_found
     ${name}             Set Variable    Barão Zemo
     Remove Student By Name              ${name}  
-    Go to Students
+    Go To Students
     Search Student By Name              ${name} 
     Register Should Not Be Found
 
-Cenario: Busca alunos por um único termo
-
+Cenario: Buscar Alunos Por Um Único Termo
+    [Tags]      by_term
     ${fixture}          Get JSON        students-search.json
     ${students}         Set Variable    ${fixture['students']}
 
@@ -41,7 +42,7 @@ Cenario: Busca alunos por um único termo
         Insert Student      ${item}
     END
 
-    Go to Students
+    Go To Students
     Search Student By Name      ${word} 
 
     FOR     ${item}     IN      @{students}

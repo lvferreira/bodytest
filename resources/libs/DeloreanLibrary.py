@@ -5,10 +5,10 @@ class DeloreanLibrary():
 
     def connect(self):
         return psycopg2.connect(
-            host='ec2-54-167-168-52.compute-1.amazonaws.com',
-            database='da5kvnrd7jr94k',
-            user='apbdgwlnpztsmc',
-            password='6aad256b056105a0b2faaa66665422f08d11c32bf5500d8aded90f2a51d07c57'
+            host='ec2-54-91-188-254.compute-1.amazonaws.com',
+            database='dc3tkb69479f2u',
+            user='ysvhpddunzanaj',
+            password='8bbe6900da6ace43807de10f07da3aa2f83c674749d593cd511068ea0498cde0'
         )
 
     # No Robot vira uma Keyword automaticamente => Remove Student 
@@ -20,6 +20,7 @@ class DeloreanLibrary():
         conn = self.connect()
         cur = conn.cursor()
         cur.execute(query)
+
         conn.commit()
         conn.close()
 
@@ -31,6 +32,7 @@ class DeloreanLibrary():
         conn = self.connect()
         cur = conn.cursor()
         cur.execute(query)
+
         conn.commit()
         conn.close()
 
@@ -46,6 +48,7 @@ class DeloreanLibrary():
         conn = self.connect()
         cur = conn.cursor()
         cur.execute(query)
+
         conn.commit()
         conn.close()
 
@@ -57,6 +60,7 @@ class DeloreanLibrary():
         conn = self.connect()
         cur = conn.cursor()
         cur.execute(query)
+
         conn.commit()
         conn.close()
 
@@ -72,6 +76,7 @@ class DeloreanLibrary():
         conn = self.connect()
         cur = conn.cursor()
         cur.execute(query)
+
         conn.commit()
         conn.close()
   

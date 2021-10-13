@@ -6,7 +6,7 @@ ${NAME_FIELD}          css=input[name=name]
 ${EMAIL_FIELD}         css=input[name=email] 
 ${AGE_FIELD}           css=input[name=age]
 ${WEIGHT_FIELD}        css=input[name=weight]
-${HEIGHT_FIELD}     css=input[name=feet_tall]
+${HEIGHT_FIELD}        css=input[name=feet_tall]
 
 **Keywords***
 ## Forms
@@ -23,16 +23,12 @@ New Student
 
    #<input placeholder="Digite seu nome completo" class="sc-fjdhpX iylogV" id="name" name="name" aria-label="name" value="">
     Fill Text          ${NAME_FIELD}           ${student.name}
-
     #<input type="email" placeholder="Digite seu endereço de e-Mail" class="sc-fjdhpX iylogV" id="email" name="email" aria-label="email" value="">
     Fill Text          ${EMAIL_FIELD}           ${student.email}
-
     #<input type="number" placeholder="Sua Idade" class="sc-fjdhpX iylogV" id="age" name="age" aria-label="age" value="">
     Fill Text          ${AGE_FIELD}             ${student.age}
-
     #<input step="0.01" type="number" placeholder="Seu Peso" class="sc-fjdhpX iylogV" id="weight" name="weight" aria-label="weight" value="">
     Fill Text          ${WEIGHT_FIELD}          ${student.weight}
-
     #<input step="0.01" type="number" placeholder="Sua Altura" class="sc-fjdhpX iylogV" id="feet_tall" name="feet_tall" aria-label="feet_tall" value="">
     Fill Text          ${FEET_TALL_FIELD}      ${student.feet_tall}
 
@@ -55,12 +51,12 @@ Search Student By Name
     Fill Text       css=input[placeholder="Buscar aluno"]       ${name}
 
 ## Links & Buttons
-Go to Form Student
+Go To Form Student
     # <a color="#4DC097" class="sc-cvbbAY glUTun" href="/alunos/new">
     Click                           css=a[href$="alunos/new"]       
     Wait For Elements State         css=h1 >> text=Novo aluno     visible     5  
 
-Go to Student Update Form
+Go To Student Update Form
     [Arguments]     ${email}
 
     #<td class="sc-jKJlTe lanLWo">
@@ -88,7 +84,7 @@ Request Removal By Email
     # xpath=//td[contains(text(), "carol@test.com")]/../td//button[@id="trash"]
 
 ##Validations
-Student Should Not Visible
+Student Should Not Be Visible
     [Arguments]                 ${email}
     Wait For Elements State     xpath=//td[contains(text(), "${email}")]    detached    5
 

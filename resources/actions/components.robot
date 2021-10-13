@@ -33,7 +33,7 @@ Total Items Should Be
     ${element}          Set Variable       css=#pagination .total
 
     #<div id="pagination" class="sc-jlyJG fLwDpw">
-    #    <strong class="total">Total: 3</strong>
+    #    <strong class="total">Total: 1</strong>
     #    <span class="items">Página: 1/1 itens por página: 5</span></div>
     Wait For Elements State     ${element}        visible         5
     Get Text                    ${element}        ==            Total: ${number}
