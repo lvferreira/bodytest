@@ -28,24 +28,22 @@ Cenario: Registro Não Encontrado
 
 Cenario: Buscar Alunos Por Um Único Termo
     [Tags]      by_term
-    ${fixture}          Get JSON        students-search.json
-    ${students}         Set Variable    ${fixture['students']}
+    ${json}          Get JSON        students-search.json
 
-    ${word}          Set Variable    ${fixture['word']}
-    ${total}         Set Variable    ${fixture['total']}
+    ${students}      Set Variable    ${json['students']}
+    ${term}          Set Variable    ${json['word']}
+    ${total}         Set Variable    ${json['total']}
 
-    Remove Student By Name              ${word}
-
-    #Log to Console      ${json_object['students']}
+    Remove Student By Name              ${term}
 
     FOR     ${item}     IN      @{students}
         Insert Student      ${item}
     END
 
     Go To Students
-    Search Student By Name      ${word} 
+    Search Student By Name      ${term} 
 
     FOR     ${item}     IN      @{students}
         Student Name Should Be Visible      ${item['name']}
     END
-    Total Items Should Be       ${total}     
+    Total Items Should Be       ${total}

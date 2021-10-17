@@ -90,10 +90,10 @@ Student Should Not Be Visible
 
 Student Should Be Visible
     [Arguments]                 ${email}
-    Wait For Elements State     xpath=//td[contains(text(), "${email}")]    visible    5
+    Wait For Elements State     xpath=//td[contains(text(), "${email}")]    visible     5
      
 Student Name Should Be Visible
     [Arguments]         ${name}
     
-    Wait For Elements State     css=table tbody tr >> text=${name}        visible         5
+    Wait For Elements State     css=table tbody tr >> text=${name}          visible     5
 

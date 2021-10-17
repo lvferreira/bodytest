@@ -7,6 +7,6 @@ Documentation       Arquivo que contém funções auxiliares do projeto de autom
 Get JSON 
     [Arguments]     ${file_name}
 
-    ${file}=            Get File                 ${EXECDIR}/resources/fixtures/${file_name}
-    ${json_object}      Evaluate                json.loads($file)       json
-    [return]            ${json_object}
+    ${file}=            Get File                ${EXECDIR}/resources/fixtures/${file_name}
+    ${json}             Evaluate                json.loads($file)       json
+    [return]            ${json}
