@@ -8,21 +8,22 @@ Test Teardown       Take Screenshot
 
 ***Test Cases***
 Cenario: Atualizar um aluno já cadastrado
+    [Tags]      update
+    [Teardown]                          ThinkTime
+    ${json}    Get JSON    students-update.json
 
-    ${fixture}      Get JSON   students-update.json
+    ${shaokhan}      Set Variable    ${json['before']}
+    ${johnnycage}    Set Variable    ${json['after']}
 
-    ${kamalakhan}   Set Variable    ${fixture['before']}
-    ${msmarvel}     Set Variable    ${fixture['after']}
+    Remove Student By Name              ${shaokhan['name']}
+    Remove Student By Name              ${johnnycage['name']}    
 
-    Remove Student By Name              ${kamalakhan['name']}
-    Remove Student By Name              ${msmarvel['name']}    
-
-    Insert student                      ${kamalakhan}
-    Go to Students
-    Search Student By Name              ${kamalakhan['name']}   
-    Go to Student Update Form           ${kamalakhan['email']}
-    Update a Student                    ${msmarvel}
+    Insert Student                      ${shaokhan}
+    Go To Students
+    Search Student By Name              ${shaokhan['name']}   
+    Go To Student Update Form           ${shaokhan['email']}
+    Update Student                      ${johnnycage}
     Toaster Text Should be              Aluno atualizado com sucesso.
 
-    [Teardown]                          Thinking And Taking Screenshot  2
+    
 

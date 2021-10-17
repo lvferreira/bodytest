@@ -9,7 +9,7 @@ Test Teardown       Take Screenshot
 ***Test Cases***
 Cenario: Busca Exata
     [Tags]      search
-    &{student}          Create Dictionary   name=Leandro Ferreira      email=leo.ferreira@mail.io     age=34       weight=74      feet_tall=1.68
+    &{student}          Create Dictionary   name=Leandro Ferreira      email=leo.ferreira@mail.io     age=34       weight=74      height=1.68
 
     Remove Student By Name              ${student.name}
     Insert Student                      ${student} 

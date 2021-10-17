@@ -16,6 +16,9 @@ Resource        actions/enrolls.robot
 
 Resource        helpers.robot
 
+*** Variables ***
+${timeout}      2
+
 ***Keywords***
 Start Browser Session
     New Browser     chromium    True
@@ -32,8 +35,6 @@ Clear LS
     LocalStorage Clear
 
 ThinkTime
-    [Arguments]     ${timeout}
-
     Sleep           ${timeout}
     Take Screenshot
 

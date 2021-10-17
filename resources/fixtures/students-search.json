@@ -7,21 +7,21 @@
             "email": "dguetta@gmail.com",
             "age": 35,
             "weight": 70,
-            "feet_tall": 1.75
+            "height": 1.75
         },
         {
             "name": "David Bowie",
-            "email": "dboiwe@hotmail.com",
+            "email": "dbowie@hotmail.com",
             "age": 43,
             "weight": 62,
-            "feet_tall": 1.79
+            "height": 1.79
         },
         {
             "name": "David Beckham",
             "email": "dbeckham@yahoo.com",
             "age": 39,
             "weight": 74,
-            "feet_tall": 1.82
+            "height": 1.82
         }
     ]
 }

@@ -9,7 +9,7 @@ Test Teardown       Take Screenshot
 ***Test Cases***
 Cenario: Novo Aluno
     [Tags]      new
-    &{student}      Create Dictionary   name=Leandro Ferreira      email=leo.ferreira@mail.io     age=34       weight=74      feet_tall=1.68 
+    &{student}      Create Dictionary   name=Leandro Ferreira      email=leo.ferreira@mail.io     age=34       weight=74      height=1.68 
 
     Remove Student             ${student.email}
     Go to Students
@@ -24,7 +24,7 @@ Cenario: Novo Aluno
 
 Cenario: Não deve permitir email duplicado
     [Tags]      dup
-    &{student}      Create Dictionary   name=Leandro Ferreira      email=leo.ferreira@mail.io     age=34       weight=74      feet_tall=1.68 
+    &{student}      Create Dictionary   name=Leandro Ferreira      email=leo.ferreira@mail.io     age=34       weight=74      height=1.68 
 
     Insert Student            ${student}
     Go to Students
@@ -72,7 +72,7 @@ Cenario: Validar campo do tipo email
 
 Cenario: Validar idade mínima para cadastro
     [Tags]      age
-    &{student}      Create Dictionary   name=Leandro Ferreira      email=leo.ferreira@mail.io     age=13       weight=56      feet_tall=1.59 
+    &{student}      Create Dictionary   name=Leandro Ferreira      email=leo.ferreira@mail.io     age=13       weight=56      height=1.59 
 
     Go to Students
     Go to Form Student

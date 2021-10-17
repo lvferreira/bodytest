@@ -42,7 +42,7 @@ class DeloreanLibrary():
 
         query = ("insert into students (name, email, age, weight, feet_tall, created_at, updated_at)"
                 "values ('{}', '{}', {}, {}, {}, now(), now());"
-                .format(student['name'], student['email'], student['age'], student['weight'], student['feet_tall']))
+                .format(student['name'], student['email'], student['age'], student['weight'], student['height']))
         info(query)
 
         conn = self.connect()
