@@ -11,6 +11,7 @@ Cenario: Deve matricular um aluno em um plano
     [Tags]      enroll
     [Teardown]                  ThinkTime
     ${json}     Get JSON        enroll-create.json
+
     ${sara}     Set Variable    ${json['student']}
     ${fit}      Set Variable    ${json['plan']}
 
@@ -27,6 +28,7 @@ Cenario: Deve matricular um aluno em um plano
 Cenario: Deve exibir data inicial e final conforme o plano escolhido
     [Tags]      enroll_dates
     ${json}     Get JSON        enroll-dates.json
+    
     ${john}     Set Variable    ${json['student']}
     ${black}    Set Variable    ${json['plan']}
 

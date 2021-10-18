@@ -16,7 +16,7 @@ Resource        actions/enrolls.robot
 
 Resource        helpers.robot
 
-*** Variables ***
+***Variables***
 ${timeout}      2
 ${browse}       chromium
 ${headless}     False

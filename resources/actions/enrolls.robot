@@ -30,4 +30,4 @@ End Date Should Be
     [Arguments]     ${days}
     ${current_date}     Get Current Date
     ${end_date}         Add Time To Date            ${current_date}     ${days} days     result_format=%d/%m/%Y
-    Get Attribute       css=input[name=end_date]        value           equal            ${end_date}
+    Get Attribute       css=input[name=end_date]        value       equal       ${end_date}
