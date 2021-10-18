@@ -18,16 +18,20 @@ Resource        helpers.robot
 
 *** Variables ***
 ${timeout}      2
+${browse}       chromium
+${headless}     False
+${admin}        admin@bodytest.com
+${pwd}          pwd123
 
 ***Keywords***
 Start Browser Session
-    New Browser     chromium    True
+    New Browser     ${browse}    ${headless}
     New Page        about:blank
 
 User Session
     Start Browser Session
     Go To Login Page
-    Login With                   admin@bodytest.com     pwd123
+    Login With                   ${admin}     ${pwd}
     User Should Be Logged In     Administrador
 
 Clear LS

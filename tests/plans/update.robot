@@ -1,27 +1,26 @@
 ***Settings***
-Documentation       Atualizacao de Planos
+Documentation       Gestão de Planos - Atualizacao de Planos
 
 Resource            ${EXECDIR}/resources/base.robot
 
-Suite Setup         Start Admin Session
+Suite Setup         User Session
 Test Teardown       Take Screenshot
 
 ***Test Cases***
 Cenario: Atualizar um plano já cadastrado
+     [Tags]     update
+     [Teardown]                     ThinkTime
+    ${json}      Get JSON        plans-update.json
 
-    ${fixture}      Get JSON        plans-update.json
-
-    ${fat}      Set Variable    ${fixture['before']}
-    ${slim}     Set Variable    ${fixture['after']}
+    ${fat}      Set Variable    ${json['before']}
+    ${slim}     Set Variable    ${json['after']}
 
     Remove Plan                      ${fat['title']}
     Remove Plan                      ${slim['title']}
 
     Insert Plan                      ${fat}
-    Go to Plans
+    Go To Plans
     Search Plan By Title             ${fat['title']}   
-    Go to Plan Update Form           ${fat['title']} 
-    Update a Plan                    ${slim} 
+    Go To Plan Update Form           ${fat['title']} 
+    Update Plan                      ${slim} 
     Toaster Text Should be           Plano Atualizado com sucesso
-
-    [Teardown]                     Thinking And Taking Screenshot  2

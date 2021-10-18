@@ -2,7 +2,7 @@
 Documentation       Acoes de componentes genericos
 
 ***Keywords***
-## Validations
+## Checkpoints
 Toaster Text Should be
     [Arguments]                 ${expect_text}
     Wait For Elements State     css=.Toastify__toast-body >> text=${expect_text}       visible     5  
@@ -38,7 +38,7 @@ Total Items Should Be
     Wait For Elements State     ${element}        visible         5
     Get Text                    ${element}        ==            Total: ${number}
 
-## Return Elements & Texts
+## Elements & Text
 Get Required Alerts
     [Arguments]                 ${index}
         

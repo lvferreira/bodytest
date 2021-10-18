@@ -1,5 +1,5 @@
 ***Settings***
-Documentation       Ações da feature de gestão de planos
+Documentation       Ações da feature de Gestão de Planos
 
 ***Variables***
 ${TITLE_FIELD}      id=title
@@ -24,7 +24,7 @@ Search Plan By Title
 
     Fill Text       css=input[placeholder="Buscar plano"]       ${title}
 
-Update a Plan
+Update Plan
     [Arguments]        ${plan}
 
     Fill Text          ${TITLE_FIELD}            ${plan['title']}
@@ -38,7 +38,7 @@ Go To Form Plan
     Click       css=a[href$="planos/new"]
     Wait For Elements State     css=h1 >> text=Novo plano     visible     5
 
-Go to Plan Update Form
+Go To Plan Update Form
     [Arguments]     ${title}
 
     Click           xpath=//td[contains( text(), "${title}")]/..//a[@class="edit"]
