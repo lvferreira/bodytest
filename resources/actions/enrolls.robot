@@ -1,5 +1,5 @@
 ***Settings***
-Documentation       Ações da feature de gestão de matriculas
+Documentation       Ações da feature de Gestão de Matrículas
 
 ***Keywords***
 ## Forms

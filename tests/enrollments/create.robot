@@ -1,5 +1,5 @@
 ***Settings***
-Documentation       Gestão de matrículas
+Documentation       Gestão de Matrículas - Cadastro de Matrícula
 
 Resource            ${EXECDIR}/resources/base.robot
 
