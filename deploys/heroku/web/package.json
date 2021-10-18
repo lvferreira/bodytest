@@ -1,6 +1,6 @@
 {
   "name": "bodytest-web",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "BodyTest for QA Ninja Academy",
   "main": "server.js",
   "scripts": {
