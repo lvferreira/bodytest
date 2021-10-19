@@ -23,7 +23,7 @@ Go To Enrolls Form
 
 ## Validations
 Start Date Should Be Today
-    ${start_date}     Get Current Date            result_format=%d/%m/%Y
+    ${start_date}     Get Current Date      result_format=%d/%m/%Y
     Get Attribute       css=input[name=start_date]      value       equal       ${start_date}
 
 End Date Should Be  
