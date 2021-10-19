@@ -2,11 +2,11 @@
     "before": {
         "title": "Plano Fat",
         "duration": "24",
-        "price": 40.00
+        "price": 39.99
     },
     "after": {
         "title": "Plano Slim",
         "duration": "6",
-        "price": 25.00
+        "price": 24.99
     }
 }
